@@ -103,8 +103,22 @@ def colorize(text: str, color: str) -> str:
     return f"{color}{text}{Colors.RESET}"
 
 
+BANNER = r"""
+           __         ___        __         ____
+    ____  / /_  ____ |__ \ _____/ /_  ___  / / /
+   / __ \/ __ \/ __ \__/ // ___/ __ \/ _ \/ / /
+  / /_/ / / / / /_/ / __/(__  ) / / /  __/ / /
+ / .___/_/ /_/ .___/____/____/_/ /_/\___/_/_/
+/_/         /_/
+"""
+
+TAGLINE = "CVE-2026-109618 / CVE-2026-109619  -  PHP RCE exposure scanner"
+
+
 def print_banner() -> None:
-    print(f"\n{Colors.CYAN}{Colors.BOLD}brought to you by assetnote{Colors.RESET}\n")
+    print(colorize(BANNER.strip("\n"), Colors.CYAN + Colors.BOLD))
+    print(colorize(f"  {TAGLINE}", Colors.WHITE))
+    print()
 
 
 def utc_now() -> str:
